@@ -25,7 +25,7 @@ elixir(function(mix) {
             'libs/bootstrap.js',
             'libs/jquery.js',
             'libs/metisMenu.js',
-            'libs/sa-admin-2.js',
+            'libs/sb-admin-2.js',
             'libs/scripts.js'
         ],'./public/js/libs.js')
 });
