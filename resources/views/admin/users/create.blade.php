@@ -20,8 +20,12 @@
     </div>
     <div class="form-group">
         {{ Form::label('status', 'Status') }}
-        {{ Form::select('status',array(1=>'Active',0 => 'Inactive') ,0, ['class' => 'form-control']) }}
+        {{ Form::select('is_active',array(1=>'Active',0 => 'Inactive') ,0, ['class' => 'form-control']) }}
     </div>
+    <div class="form-group">
+            {{ Form::label('file', 'File') }}
+            {{ Form::file('file', ['class' => 'form-control']) }}
+        </div>
     <div class="form-group">
             {{ Form::label('password', 'Password') }}
             {{ Form::password('password', ['class' => 'form-control']) }}
@@ -29,6 +33,8 @@
     <div class="form-group">
         {!! Form::submit('Create User', ['class'=>'bnt bnt-primary']) !!}
     </div>
+
+    @include('includes.form_error')
 {!! Form::close() !!}
 
 @stop
