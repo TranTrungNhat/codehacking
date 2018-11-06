@@ -132,16 +132,16 @@ class AdminUsersController extends Controller
             $input['password'] = bcrypt($request->password);
         }
 
-        
-        if ($file = $request->file('photo_id')){
 
-             $name = time() . $file->getClientOriginalName();
+            if ($file = $request->file('photo_id')){
 
-             $file->move('images/', $name);
+                $name = time() . $file->getClientOriginalName();
 
-             $photo = Photo::create(['file'=>$name]);
+                $file->move('images/', $name);
 
-             $input['photo_id'] = $photo->id;
+                $photo = Photo::create(['file'=>$name]);
+
+                $input['photo_id'] = $photo->id;
 
          }
           $user->update($input);
